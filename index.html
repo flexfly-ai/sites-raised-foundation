@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- SEO -->
+  <title>Raised Foundation Repair — San Diego & Orange County</title>
+  <meta name="description" content="Nearly 700 foundations repaired in San Diego and Orange County. Free inspection, lifetime warranty, jobs finished in as little as one day. Call (619) 961-1006.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Raised Foundation Repair — San Diego & Orange County">
+  <meta property="og:description" content="Nearly 700 foundations repaired. Free inspection, lifetime warranty, done in as little as one day.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raised.flexfly.ai">
+  <meta property="og:image" content="https://raised.flexfly.ai/images/og.jpg">
+
+  <!-- Schema.org LocalBusiness + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Raised Foundation Repair",
+    "description": "Professional raised foundation repair serving San Diego County and Orange County.",
+    "telephone": "+16199611006",
+    "email": "info@raisedfoundationrepair.com",
+    "url": "https://raised.flexfly.ai",
+    "openingHours": ["Mo-Fr 08:00-18:00","Sa 10:00-12:00"],
+    "areaServed": ["San Diego County","Orange County"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Foundation Repair Services",
+      "itemListElement": [
+        {"@type": "Offer","itemOffered": {"@type": "Service","name": "Crawl Space Foundation Repair"}},
+        {"@type": "Offer","itemOffered": {"@type": "Service","name": "Post & Pier Foundation Repair"}},
+        {"@type": "Offer","itemOffered": {"@type": "Service","name": "Free Foundation Inspection"}}
+      ]
+    },
+    "license": "CA General Contractors License #B1069470"
+  }
+  </script>
+
+  <!-- Fonts: Fraunces (display) + Libre Franklin (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- noscript: ensure content visible without JS -->
+  <noscript>
+    <style>
+      .reveal, .hero-title, .hero-sub, .hero-cta, .stat-item, .e-card, .sign-card, .faq-item { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --color-primary:         #2C3E50;
+      --color-primary-light:   #3D5166;
+      --color-primary-dark:    #1A2634;
+      --color-accent:          #C4733A;
+      --color-accent-light:    #E8915C;
+      --color-background:      #FAFAF8;
+      --color-surface:         #FFFFFF;
+      --color-section-alt:     #F0EDE8;
+      --color-section-dark:    #2C3E50;
+      --color-text:            #1A1F2E;
+      --color-text-muted:      #6B7280;
+      --color-text-on-primary: #FFFFFF;
+      --color-border:          #E5E1DA;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Libre Franklin', system-ui, sans-serif;
+
+      --text-hero:    clamp(2.8rem, 6vw, 5rem);
+      --text-h2:      clamp(2rem, 3.5vw, 3rem);
+      --text-h3:      clamp(1.2rem, 2vw, 1.5rem);
+      --text-body:    1rem;
+      --text-sm:      0.875rem;
+
+      --shadow-card:       0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+      --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.12), 0 12px 32px rgba(0,0,0,0.10);
+      --shadow-lg:         0 8px 32px rgba(0,0,0,0.14);
+      --shadow-btn:        0 4px 14px rgba(196,115,58,0.35);
+
+      --section-padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 5rem);
+      --card-padding:    1.75rem;
+
+      --radius-card: 1rem;
+      --radius-btn:  9999px;
+    }
+
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-background);
+      color: var(--color-text);
+      font-size: var(--text-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ── */
+    .font-display { font-family: var(--font-display); }
+
+    .text-hero {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .text-h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    /* ── Navigation ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem clamp(1.25rem, 5vw, 5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+    }
+
+    #navbar.scrolled {
+      background: var(--color-primary);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .nav-cta {
+      background: var(--color-accent);
+      color: white !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600 !important;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s !important;
+      box-shadow: var(--shadow-btn);
+    }
+
+    .nav-cta:hover {
+      background: var(--color-accent-light) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(196,115,58,0.45) !important;
+    }
+
+    /* hamburger */
+    #menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.4rem;
+    }
+    #menu-btn span {
+      display: block;
+      width: 24px; height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    #menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #menu-btn.open span:nth-child(2) { opacity: 0; }
+    #menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--color-primary-dark);
+      z-index: 99;
+      padding: 6rem 2rem 2rem;
+      flex-direction: column;
+      gap: 0;
+    }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-family: var(--font-display);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-weight: 600;
+    }
+    #mobile-menu .mob-cta {
+      margin-top: 2rem;
+      display: inline-block;
+      background: var(--color-accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-btn);
+      text-align: center;
+      border: none;
+      font-size: 1.1rem;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-accent);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: var(--shadow-btn);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--color-accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196,115,58,0.4);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-primary);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(44,62,80,0.3);
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-dark:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,38,52,0.78) 0%, rgba(44,62,80,0.55) 60%, rgba(26,38,52,0.65) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: var(--section-padding);
+      padding-top: 8rem;
+    }
+
+    /* ── Trust Bar ── */
+    .trust-bar {
+      background: var(--color-accent);
+      padding: 0.75rem clamp(1.25rem, 5vw, 5rem);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .trust-bar::-webkit-scrollbar { display: none; }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    /* ── Stats Strip ── */
+    #stats {
+      background: var(--color-primary);
+      padding: 3.5rem clamp(1.25rem, 5vw, 5rem);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      color: var(--color-accent-light);
+      line-height: 1;
+    }
+    .stat-label {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.875rem;
+      margin-top: 0.4rem;
+      font-weight: 500;
+    }
+
+    /* ── Section base ── */
+    .section {
+      padding: var(--section-padding);
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-header p {
+      color: var(--color-text-muted);
+      max-width: 580px;
+      margin: 0.75rem auto 0;
+      font-size: 1.05rem;
+    }
+
+    /* ── Signs section ── */
+    .signs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .sign-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: var(--card-padding);
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      border: 1px solid var(--color-border);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .sign-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-4px);
+    }
+    .sign-icon {
+      width: 52px; height: 52px;
+      background: rgba(196,115,58,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--color-accent);
+    }
+    .sign-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.4rem;
+    }
+    .sign-card p {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── 5 E's section ── */
+    #five-es {
+      background: var(--color-section-alt);
+    }
+    .es-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .e-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      border-top: 4px solid var(--color-accent);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .e-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-5px);
+    }
+    .e-letter {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .e-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+    .e-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── Why us ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .why-feature {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .why-feature-icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: rgba(196,115,58,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-accent);
+    }
+    .why-feature h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+    .why-feature p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Before/After card */
+    .before-after {
+      background: var(--color-primary);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .ba-img-wrap {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    .ba-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-label {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: var(--color-accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+    }
+    .ba-body {
+      padding: 1.75rem;
+    }
+    .ba-body h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .ba-body p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+    }
+    .warranty-badge {
+      margin-top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(196,115,58,0.2);
+      border: 1px solid var(--color-accent);
+      color: var(--color-accent-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+    }
+
+    /* ── Service Areas ── */
+    #areas {
+      background: var(--color-section-dark);
+    }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .area-block h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-accent-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(196,115,58,0.3);
+    }
+    .area-cities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .city-tag {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: background 0.2s, color 0.2s;
+    }
+    .city-tag:hover {
+      background: rgba(196,115,58,0.2);
+      color: white;
+      border-color: rgba(196,115,58,0.4);
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-q {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--color-primary);
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--color-section-alt);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-accent);
+      transition: background 0.2s, transform 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      background: var(--color-accent);
+      color: white;
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      display: none;
+      padding-bottom: 1.25rem;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CTA Band ── */
+    #cta-band {
+      background: var(--color-accent);
+      padding: 5rem clamp(1.25rem, 5vw, 5rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    #cta-band h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    #cta-band p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--color-accent);
+      padding: 0.9rem 2.25rem;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+    }
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: white;
+      padding: 0.9rem 2.25rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.6);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn-outline-white:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .contact-row-icon {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: rgba(196,115,58,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-accent);
+    }
+    .contact-row strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+    .contact-row a, .contact-row span {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-row a:hover { color: var(--color-accent); }
+
+    /* Form */
+    .form-wrap {
+      background: var(--color-surface);
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--color-border);
+    }
+    .form-wrap h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.35rem;
+    }
+    .form-wrap .form-sub {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.75rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-field {
+      margin-bottom: 1rem;
+    }
+    .form-field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+    .form-field input, .form-field textarea, .form-field select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-text);
+      background: var(--color-background);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-field input:focus, .form-field textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(196,115,58,0.12);
+    }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; margin-top: 0.5rem; font-size: 1rem; }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* ── FlexFly widget teaser ── */
+    #widget-teaser {
+      background: var(--color-section-alt);
+      padding: 4rem clamp(1.25rem, 5vw, 5rem);
+    }
+    .widget-teaser-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      background: var(--color-surface);
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+    }
+    .widget-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(196,115,58,0.1);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    .widget-teaser-inner h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.4rem;
+    }
+    .widget-teaser-inner p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+    }
+    /* Fake chat bubble */
+    .chat-preview {
+      position: relative;
+      width: 220px;
+      flex-shrink: 0;
+    }
+    .chat-bubble-wrap {
+      background: white;
+      border-radius: 1rem 1rem 0.25rem 1rem;
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+      font-size: 0.85rem;
+      color: var(--color-text);
+      line-height: 1.45;
+      margin-bottom: 0.75rem;
+    }
+    .chat-bubble-user {
+      background: var(--color-primary);
+      color: white;
+      border-radius: 1rem 1rem 1rem 0.25rem;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.8rem;
+      text-align: right;
+    }
+    .chat-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--color-primary-dark);
+      padding: 3.5rem clamp(1.25rem, 5vw, 5rem) 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent-light);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; }
+    .footer-col a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+    .footer-bottom a:hover { color: white; }
+    .powered-by {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .powered-by a { color: rgba(255,255,255,0.5); }
+    .powered-by a:hover { color: var(--color-accent-light); }
+
+    /* ── Soil strata divider ── */
+    .strata-divider {
+      height: 4px;
+      background: linear-gradient(90deg, #C4733A 0%, #2C3E50 40%, #8B7355 70%, #C4733A 100%);
+      opacity: 0.25;
+    }
+
+    /* ── Scroll reveal (JS sets opacity) ── */
+    .reveal { opacity: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      #menu-btn { display: flex; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .areas-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .widget-teaser-inner { grid-template-columns: 1fr; }
+      .chat-preview { display: none; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .es-grid { grid-template-columns: 1fr 1fr; }
+      .signs-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .es-grid { grid-template-columns: 1fr; }
+      .signs-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─────────────── NAVIGATION ─────────────── -->
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">Raised Foundation Repair</a>
+
+    <ul class="nav-links">
+      <li><a href="#signs">Warning Signs</a></li>
+      <li><a href="#five-es">Why Us</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#areas">Service Areas</a></li>
+      <li><a href="#contact" class="nav-cta">Free Inspection</a></li>
+    </ul>
+
+    <button id="menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" role="dialog" aria-label="Mobile menu">
+    <a href="#signs" class="mob-link">Warning Signs</a>
+    <a href="#five-es" class="mob-link">Why Us</a>
+    <a href="#faqs" class="mob-link">FAQs</a>
+    <a href="#areas" class="mob-link">Service Areas</a>
+    <a href="#contact" class="mob-cta">Book Free Inspection</a>
+  </div>
+
+  <!-- ─────────────── HERO ─────────────── -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg" role="img" aria-label="Foundation repair crew working under a home"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="section-label hero-label" style="color:rgba(232,145,92,0.9);margin-bottom:1rem;">San Diego & Orange County's Foundation Specialists</p>
+      <h1 class="text-hero hero-title" style="color:white;margin-bottom:1.25rem;">
+        The 5&nbsp;E's of Foundation<br>Repair Done Right
+      </h1>
+      <p class="hero-sub" style="color:rgba(255,255,255,0.82);font-size:1.15rem;max-width:520px;margin-bottom:2rem;line-height:1.65;">
+        Nearly 700 foundations restored across Southern California — with a lifetime warranty, jobs finished in as little as one day, and a free inspection to start.
+      </p>
+      <div class="hero-cta" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary">
+          Book Free Inspection
+        </a>
+        <a href="#five-es" class="btn-outline">
+          See the 5 E's
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust-bar" role="complementary" aria-label="Trust signals">
+    <div class="trust-item">
+      <span>✓</span>
+      <span>CA License #B1069470</span>
+    </div>
+    <div class="trust-item">
+      <span>✓</span>
+      <span>Lifetime Installation Warranty</span>
+    </div>
+    <div class="trust-item">
+      <span>✓</span>
+      <span>$0 Inspection Fee</span>
+    </div>
+    <div class="trust-item">
+      <span>✓</span>
+      <span>Jobs Completed in as Little as 1 Day</span>
+    </div>
+  </div>
+
+  <!-- ─────────────── STATS STRIP ─────────────── -->
+  <section id="stats" aria-label="Company stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num" data-count="700">0</div>
+        <div class="stat-label">Foundations Repaired</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="10">0</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="1">0</div>
+        <div class="stat-label">Day — Fastest Completion</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="0" data-prefix="$">$0</div>
+        <div class="stat-label">Cost for Your Inspection</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── SIGNS OF PROBLEMS ─────────────── -->
+  <section id="signs" class="section" aria-labelledby="signs-heading">
+    <div class="section-inner">
+      <header class="section-header">
+        <p class="section-label">Know the Warning Signs</p>
+        <h2 id="signs-heading" class="text-h2">Is Your Home Trying to Tell You Something?</h2>
+        <p>Older homes on raised foundations show predictable stress signals. Catch them early and a repair costs a fraction of what it will later. Here's what to look for.</p>
+      </header>
+
+      <div class="signs-grid">
+        <div class="sign-card reveal">
+          <div class="sign-icon" aria-hidden="true">
+            <i data-lucide="split-square-vertical" style="width:24px;height:24px;"></i>
+          </div>
+          <h3>Wall Cracks</h3>
+          <p>Vertical and horizontal cracks in the stem wall indicate foundation movement — not just settling.</p>
+        </div>
+        <div class="sign-card reveal">
+          <div class="sign-icon" aria-hidden="true">
+            <i data-lucide="door-open" style="width:24px;height:24px;"></i>
+          </div>
+          <h3>Sticking Doors</h3>
+          <p>Doors that drag or refuse to close properly signal that the frame has shifted out of square.</p>
+        </div>
+        <div class="sign-card reveal">
+          <div class="sign-icon" aria-hidden="true">
+            <i data-lucide="layout-panel-left" style="width:24px;height:24px;"></i>
+          </div>
+          <h3>Sticking Windows</h3>
+          <p>Windows that jam or no longer seat flush in their frames are an early indicator of foundation movement.</p>
+        </div>
+        <div class="sign-card reveal">
+          <div class="sign-icon" aria-hidden="true">
+            <i data-lucide="waves" style="width:24px;height:24px;"></i>
+          </div>
+          <h3>Squishy Floors</h3>
+          <p>Soft, springy, or noticeably uneven floors point to failing posts or girders beneath your home.</p>
+        </div>
+        <div class="sign-card reveal">
+          <div class="sign-icon" aria-hidden="true">
+            <i data-lucide="triangle-alert" style="width:24px;height:24px;"></i>
+          </div>
+          <h3>Cracks Above Openings</h3>
+          <p>Diagonal cracks above doors and windows are caused by lateral soil pressure on the foundation.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="#contact" class="btn-primary">Get a Free Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── 5 E's ─────────────── -->
+  <section id="five-es" class="section" aria-labelledby="es-heading">
+    <div class="section-inner">
+      <header class="section-header">
+        <p class="section-label">Our Difference</p>
+        <h2 id="es-heading" class="text-h2">The 5 E's of Raised Foundation Repair</h2>
+        <p>Every job we take on is guided by five principles. Not marketing language — the actual framework our crews use on every single repair.</p>
+      </header>
+
+      <div class="es-grid">
+        <div class="e-card reveal">
+          <div class="e-letter">E</div>
+          <div class="e-title">Easy</div>
+          <div class="e-desc">Forget the stress. We handle every step — diagnosis, materials, repairs — so you don't have to manage a thing.</div>
+        </div>
+        <div class="e-card reveal">
+          <div class="e-letter">E</div>
+          <div class="e-title">Effective</div>
+          <div class="e-desc">We find the root cause, not just the symptom. Targeted repairs that fix what's actually failing — not a patch that buys time.</div>
+        </div>
+        <div class="e-card reveal">
+          <div class="e-letter">E</div>
+          <div class="e-title">Efficient</div>
+          <div class="e-desc">Most jobs wrap in a single day. Our crews are trained on raised foundations specifically — no learning curve, no unnecessary delays.</div>
+        </div>
+        <div class="e-card reveal">
+          <div class="e-letter">E</div>
+          <div class="e-title">Economical</div>
+          <div class="e-desc">A fraction of what other companies charge. We're specialists, not generalists — that efficiency passes directly to you.</div>
+        </div>
+        <div class="e-card reveal">
+          <div class="e-letter">E</div>
+          <div class="e-title">Earthquake Resistant</div>
+          <div class="e-desc">Every repair uses materials engineered for Southern California's seismic environment. Built to handle the next one.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── WHY RAISED ─────────────── -->
+  <section id="why" class="section" style="background:var(--color-surface);" aria-labelledby="why-heading">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div>
+          <p class="section-label" style="margin-bottom:0.75rem;">Why Raised Foundation Repair</p>
+          <h2 id="why-heading" class="text-h2" style="margin-bottom:1.5rem;">Specialists. Not generalists.</h2>
+
+          <div class="why-feature reveal">
+            <div class="why-feature-icon" aria-hidden="true">
+              <i data-lucide="shield-check" style="width:20px;height:20px;"></i>
+            </div>
+            <div>
+              <h4>Lifetime Installation Warranty</h4>
+              <p>Every raised foundation we repair is backed by a lifetime warranty on our installation work. We stand behind it.</p>
+            </div>
+          </div>
+
+          <div class="why-feature reveal">
+            <div class="why-feature-icon" aria-hidden="true">
+              <i data-lucide="clock" style="width:20px;height:20px;"></i>
+            </div>
+            <div>
+              <h4>Finished in as Little as One Day</h4>
+              <p>Our crews specialize in crawl space and post-and-pier foundations. Speed comes from specialization — not shortcuts.</p>
+            </div>
+          </div>
+
+          <div class="why-feature reveal">
+            <div class="why-feature-icon" aria-hidden="true">
+              <i data-lucide="dollar-sign" style="width:20px;height:20px;"></i>
+            </div>
+            <div>
+              <h4>Fraction of Competitor Costs</h4>
+              <p>General contractors mark up foundation work. We don't — it's our only trade, so there's no overhead to hide in your quote.</p>
+            </div>
+          </div>
+
+          <div class="why-feature reveal">
+            <div class="why-feature-icon" aria-hidden="true">
+              <i data-lucide="search" style="width:20px;height:20px;"></i>
+            </div>
+            <div>
+              <h4>Free Expert Inspection</h4>
+              <p>We examine all seven common signs of foundation problems — no obligation, no pressure. Just an expert's honest read on your home.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before/After card -->
+        <div class="reveal">
+          <div class="before-after">
+            <div class="ba-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=75"
+                alt="Foundation repair work in progress — concrete block support under home"
+                loading="lazy"
+                width="800" height="280"
+                style="object-position:center bottom;"
+              >
+              <span class="ba-label">After Repair</span>
+            </div>
+            <div class="ba-body">
+              <h4>Built to Last. Built for California.</h4>
+              <p>Steel reinforcements and seismic-grade materials replace failing posts and deteriorated wood supports — giving your home a foundation you can count on for decades.</p>
+              <div class="warranty-badge">
+                <i data-lucide="award" style="width:14px;height:14px;"></i>
+                Lifetime Installation Warranty
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── SERVICE AREAS ─────────────── -->
+  <section id="areas" class="section" aria-labelledby="areas-heading">
+    <div class="section-inner">
+      <header class="section-header">
+        <p class="section-label" style="color:var(--color-accent-light);">Where We Work</p>
+        <h2 id="areas-heading" class="text-h2" style="color:white;">Serving San Diego &amp; Orange County</h2>
+        <p style="color:rgba(255,255,255,0.6);">If your home has a raised foundation, we can help. We cover two counties — from the coast to the foothills.</p>
+      </header>
+
+      <div class="areas-grid reveal">
+        <div class="area-block">
+          <h3>San Diego County</h3>
+          <div class="area-cities">
+            <span class="city-tag">City of San Diego</span>
+            <span class="city-tag">South Park</span>
+            <span class="city-tag">North Park</span>
+            <span class="city-tag">Kensington</span>
+            <span class="city-tag">Normal Heights</span>
+            <span class="city-tag">Bankers Hill</span>
+            <span class="city-tag">Golden Hill</span>
+            <span class="city-tag">Mission Hills</span>
+            <span class="city-tag">Point Loma</span>
+            <span class="city-tag">La Mesa</span>
+            <span class="city-tag">Chula Vista</span>
+            <span class="city-tag">Oceanside</span>
+            <span class="city-tag">Julian</span>
+            <span class="city-tag">Alpine</span>
+            <span class="city-tag">East County</span>
+          </div>
+        </div>
+        <div class="area-block">
+          <h3>Orange County</h3>
+          <div class="area-cities">
+            <span class="city-tag">Huntington Beach</span>
+            <span class="city-tag">Newport Beach</span>
+            <span class="city-tag">Costa Mesa</span>
+            <span class="city-tag">Santa Ana</span>
+            <span class="city-tag">Garden Grove</span>
+            <span class="city-tag">Fountain Valley</span>
+            <span class="city-tag">Orange</span>
+            <span class="city-tag">Anaheim</span>
+            <span class="city-tag">Tustin</span>
+            <span class="city-tag">Buena Park</span>
+            <span class="city-tag">Seal Beach</span>
+            <span class="city-tag">Laguna Beach</span>
+            <span class="city-tag">Dana Point</span>
+            <span class="city-tag">San Clemente</span>
+            <span class="city-tag">Corona Del Mar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── FAQs ─────────────── -->
+  <section id="faqs" class="section" aria-labelledby="faqs-heading">
+    <div class="section-inner">
+      <header class="section-header">
+        <p class="section-label">Common Questions</p>
+        <h2 id="faqs-heading" class="text-h2">Foundation Repair — Straight Answers</h2>
+        <p>No jargon. No pressure. Just the information you need to understand what's happening under your home.</p>
+      </header>
+
+      <div style="max-width:760px;margin:0 auto;" role="list">
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What is a raised foundation?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Homes built before 1960 in San Diego and Orange County typically have raised foundations — also called crawl spaces. These consist of concrete piers and wooden components like posts, girders, and joists that sit above the ground. Over decades, these components can deteriorate and become structurally unstable.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">Why are there cracks above my doors and windows?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">The expansive and shifting soil common throughout San Diego and Orange County creates lateral pressure on your home's foundation. As the foundation moves, cracks form along the path of least resistance — typically the diagonal corners above door and window openings.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">Why are my doors and windows sticking?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Foundation movement is one of the most common causes of sticking doors and windows across San Diego and Orange County homes. When the foundation shifts, the structural frames around openings shift with it — pulling them out of true so doors and windows no longer seat properly.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What causes sagging or uneven floors?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Expansive soil conditions cause separation in foundation components over time. When posts or girders fail or sink unevenly, the floor structure above loses uniform support — leading to visible sag, bounce, or slope across the floor surface.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What causes crumbling or cracking stem walls?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Stem wall deterioration in Southern California homes is typically caused by water damage, cumulative seismic activity over decades, or a combination of both. The good news: early intervention prevents a structural problem from becoming a rebuild.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">Why does my home have spongy or squishy floors?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Older homes with expansive or shifting soil can experience foundation sinking or component failure that robs the floor of its rigid support. The result is a soft, springy feel underfoot — a reliable sign that the structure below needs attention.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What happens during my free inspection?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Our inspector will examine your home's raised foundation for the seven most common signs of structural problems. You'll get a clear assessment — what's wrong, why it happened, and what repair options are available. No obligation, no sales pressure.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What repair options are available?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Depending on the severity and location of the damage, options range from targeted partial repairs — replacing specific posts, girders, or joists — to hydraulic leveling or full foundation rebuilds. Our inspection will match the right solution to your actual situation.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What causes gaps between my chimney and the house?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Chimney separation is typically caused by earthquakes, water intrusion, or soil shift moving foundation components over time. Because chimneys sit on their own footing, differential settlement between the chimney and the main foundation opens a visible gap.</div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q">What does bulging stucco or plaster indicate?</span>
+            <span class="faq-icon" aria-hidden="true"><i data-lucide="plus" style="width:14px;height:14px;"></i></span>
+          </button>
+          <div class="faq-answer">Bulging stucco or plaster can signal excess water damage — water adds weight to the stem wall and accelerates structural breakdown. Caught early, it's a manageable repair. Left alone, it compounds into severe foundation damage.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── CTA BAND ─────────────── -->
+  <section id="cta-band" aria-label="Call to action">
+    <h2>Concerned About Your Foundation?<br>One Inspection Changes Everything.</h2>
+    <p>We'll come out, crawl under your home, and tell you exactly what's happening — at no cost. No obligations, no pressure.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-white">
+        Book Free Inspection
+      </a>
+      <a href="tel:+16199611006" class="btn-outline-white">
+        Call (619) 961-1006
+      </a>
+    </div>
+  </section>
+
+  <!-- ─────────────── CONTACT ─────────────── -->
+  <section id="contact" class="section" aria-labelledby="contact-heading">
+    <div class="section-inner">
+      <header class="section-header" style="margin-bottom:3rem;">
+        <p class="section-label">Get in Touch</p>
+        <h2 id="contact-heading" class="text-h2">Schedule Your Free Inspection</h2>
+        <p>Fill out the form and we'll be in touch within one business day to schedule your inspection at a time that works for you.</p>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+
+          <div class="contact-row">
+            <div class="contact-row-icon" aria-hidden="true">
+              <i data-lucide="phone" style="width:18px;height:18px;"></i>
+            </div>
+            <div>
+              <strong>San Diego</strong>
+              <a href="tel:+16199611006">(619) 961-1006</a>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon" aria-hidden="true">
+              <i data-lucide="phone" style="width:18px;height:18px;"></i>
+            </div>
+            <div>
+              <strong>Orange County</strong>
+              <a href="tel:+17144903455">(714) 490-3455</a>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon" aria-hidden="true">
+              <i data-lucide="mail" style="width:18px;height:18px;"></i>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@raisedfoundationrepair.com">info@raisedfoundationrepair.com</a>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon" aria-hidden="true">
+              <i data-lucide="clock" style="width:18px;height:18px;"></i>
+            </div>
+            <div>
+              <strong>Office Hours</strong>
+              <span>Mon–Fri 8am–6pm<br>Sat 10am–12pm</span>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon" aria-hidden="true">
+              <i data-lucide="badge-check" style="width:18px;height:18px;"></i>
+            </div>
+            <div>
+              <strong>License</strong>
+              <span>CA General Contractors #B1069470</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-wrap reveal">
+          <h3>Request Your Free Inspection</h3>
+          <p class="form-sub">Some restrictions apply. We'll confirm availability when we follow up.</p>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" autocomplete="given-name">
+              </div>
+              <div class="form-field">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@email.com" autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(619) 555-0123" autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="address">Property Address</label>
+              <input type="text" id="address" name="address" placeholder="123 Main St, San Diego, CA" autocomplete="street-address">
+            </div>
+            <div class="form-field">
+              <label for="message">Describe What You're Noticing (optional)</label>
+              <textarea id="message" name="message" placeholder="Sticking doors, cracks in the wall, squishy floors…"></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+              Request Free Inspection
+            </button>
+            <p class="form-note">No cost. No pressure. A specialist will follow up within 1 business day.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strata-divider"></div>
+
+  <!-- ─────────────── FLEXFLY WIDGET TEASER ─────────────── -->
+  <section id="widget-teaser" aria-label="FlexFly AI receptionist preview">
+    <div class="section-inner">
+      <div class="widget-teaser-inner reveal">
+        <div>
+          <div class="widget-badge">
+            <span class="chat-dot"></span>
+            Powered by FlexFly
+          </div>
+          <h3>Answer Foundation Questions 24/7 — Without Lifting a Finger</h3>
+          <p>FlexFly's AI receptionist handles homeowner questions after hours, books inspection requests, and qualifies leads automatically — so your team focuses on repairs, not the phone.</p>
+          <a href="https://flexfly.ai" target="_blank" rel="noopener noreferrer" class="btn-dark" style="margin-top:1.25rem;font-size:0.9rem;">
+            See How FlexFly Works
+          </a>
+        </div>
+        <div class="chat-preview" aria-hidden="true">
+          <div class="chat-bubble-wrap">
+            <strong style="display:block;font-size:0.75rem;color:var(--color-accent);margin-bottom:0.3rem;">Raised Foundation AI</strong>
+            Hi! I can help you figure out if your home needs a foundation inspection. What are you noticing?
+          </div>
+          <div class="chat-bubble-user">
+            My floors feel kind of squishy near the hallway 🤔
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── FOOTER ─────────────── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="font-size:1.1rem;">Raised Foundation Repair</a>
+        <p>Professional crawl space and post-and-pier foundation repair serving San Diego County and Orange County since 2014.</p>
+        <p style="margin-top:0.75rem;font-size:0.8rem;color:rgba(255,255,255,0.35);">CA General Contractors License #B1069470</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="#signs">Warning Signs</a></li>
+          <li><a href="#five-es">The 5 E's</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+          <li><a href="#contact">Free Inspection</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16199611006">SD: (619) 961-1006</a></li>
+          <li><a href="tel:+17144903455">OC: (714) 490-3455</a></li>
+          <li><a href="mailto:info@raisedfoundationrepair.com">info@raisedfoundationrepair.com</a></li>
+          <li style="color:rgba(255,255,255,0.45);font-size:0.875rem;margin-top:0.25rem;">Mon–Fri 8am–6pm</li>
+          <li style="color:rgba(255,255,255,0.45);font-size:0.875rem;">Sat 10am–12pm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Raised Foundation Repair. All rights reserved.</p>
+      <div class="powered-by">
+        Site built by <a href="https://flexfly.ai" target="_blank" rel="noopener noreferrer">FlexFly</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─────────────── SCRIPTS ─────────────── -->
+  <script>
+    // ── 3-second fallback: ensure content is visible if GSAP fails to load ──
+    setTimeout(function() {
+      document.querySelectorAll('.reveal, .hero-title, .hero-sub, .hero-cta, .hero-label, .stat-item').forEach(function(el) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }, 3000);
+  </script>
+
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ── Lucide icons ──
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      // ── Navbar scroll ──
+      const navbar = document.getElementById('navbar');
+      function onScroll() {
+        if (window.scrollY > 80) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // ── Mobile menu ──
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuBtn.classList.toggle('open', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      mobileMenu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          menuBtn.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // ── FAQ accordion ──
+      document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const item = btn.closest('.faq-item');
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(function(i) {
+            i.classList.remove('open');
+            i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+          if (!wasOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // ── Form submit (demo — no backend) ──
+      const form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const btn = form.querySelector('.form-submit');
+          btn.textContent = 'Request Sent ✓';
+          btn.style.background = '#22c55e';
+          btn.disabled = true;
+        });
+      }
+
+      // ── GSAP animations (load after libraries ready) ──
+      function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Lenis
+        if (typeof Lenis !== 'undefined') {
+          const lenis = new Lenis();
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(function(time) { lenis.raf(time * 1000); });
+          gsap.ticker.lagSmoothing(0);
+        }
+
+        // Hero: stagger entrance
+        gsap.fromTo('.hero-label',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.7, delay: 0.2, ease: 'power2.out' }
+        );
+        gsap.fromTo('.hero-title',
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.9, delay: 0.45, ease: 'power3.out' }
+        );
+        gsap.fromTo('.hero-sub',
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, delay: 0.7, ease: 'power2.out' }
+        );
+        gsap.fromTo('.hero-cta',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.7, delay: 0.95, ease: 'power2.out' }
+        );
+
+        // Hero parallax on bg
+        gsap.fromTo('.hero-bg',
+          { scale: 1.05 },
+          { scale: 1, duration: 1.8, delay: 0, ease: 'power1.out' }
+        );
+
+        // Stats: count-up animation
+        gsap.fromTo('.stat-item',
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1, y: 0,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#stats',
+              start: 'top 80%',
+              once: true,
+              onEnter: function() {
+                document.querySelectorAll('[data-count]').forEach(function(el) {
+                  const target = parseInt(el.dataset.count, 10);
+                  const prefix = el.dataset.prefix || '';
+                  if (target === 0) { el.textContent = prefix + '0'; return; }
+                  gsap.fromTo({ val: 0 }, { val: target }, {
+                    duration: 1.8,
+                    ease: 'power2.out',
+                    onUpdate: function() {
+                      el.textContent = prefix + Math.round(this.targets()[0].val).toLocaleString();
+                    }
+                  });
+                });
+              }
+            }
+          }
+        );
+
+        // Reveal: generic scroll-triggered fade-up
+        document.querySelectorAll('.reveal').forEach(function(el, i) {
+          gsap.fromTo(el,
+            { opacity: 0, y: 35 },
+            {
+              opacity: 1, y: 0,
+              duration: 0.65,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              }
+            }
+          );
+        });
+      }
+
+      // Wait for deferred scripts
+      window.addEventListener('load', initGSAP);
+    });
+  </script>
+
+</body>
+</html>
