@@ -452,43 +452,83 @@
       font-size: 1.05rem;
     }
 
-    /* ── Signs section ── */
+    /* ── Signs section — bg image ── */
+    #signs {
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2000&q=75');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    #signs::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,38,52,0.88) 0%, rgba(44,62,80,0.80) 100%);
+      pointer-events: none;
+    }
+    #signs .section-inner { position: relative; z-index: 1; }
+    #signs .section-header p { color: rgba(255,255,255,0.7); }
+    #signs .text-h2 { color: white; }
+    #signs .section-label { color: var(--color-accent-light); }
+
+    /* ── FAQ section — bg image ── */
+    #faqs {
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=75');
+      background-size: cover;
+      background-position: center 30%;
+      background-attachment: fixed;
+    }
+    #faqs::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(250,250,248,0.96) 0%, rgba(240,237,232,0.94) 100%);
+      pointer-events: none;
+    }
+    #faqs .section-inner { position: relative; z-index: 1; }
+
+    /* ── Signs grid ── */
     .signs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
     }
     .sign-card {
-      background: var(--color-surface);
+      background: rgba(255,255,255,0.09);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-radius: var(--radius-card);
       padding: var(--card-padding);
-      box-shadow: var(--shadow-card);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
       text-align: center;
-      border: 1px solid var(--color-border);
-      transition: box-shadow 0.25s, transform 0.25s;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: box-shadow 0.25s, transform 0.25s, background 0.25s;
     }
     .sign-card:hover {
-      box-shadow: var(--shadow-card-hover);
-      transform: translateY(-4px);
+      background: rgba(255,255,255,0.14);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      transform: translateY(-5px);
     }
     .sign-icon {
       width: 52px; height: 52px;
-      background: rgba(196,115,58,0.1);
+      background: rgba(196,115,58,0.25);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
-      color: var(--color-accent);
+      color: var(--color-accent-light);
     }
     .sign-card h3 {
       font-family: var(--font-display);
       font-size: 1rem;
       font-weight: 700;
-      color: var(--color-primary);
+      color: white;
       margin-bottom: 0.4rem;
     }
     .sign-card p {
       font-size: 0.875rem;
-      color: var(--color-text-muted);
+      color: rgba(255,255,255,0.65);
       line-height: 1.5;
     }
 
